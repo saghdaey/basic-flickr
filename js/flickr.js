@@ -5,8 +5,6 @@ $(document).ready(function(){
         var $submitButton=$("#submit");
         var $searchField=$('#search');
         evt.preventDefault();
-        //hide photos below navbar 
-        $('#photos').html("");
         $searchField.prop("disabled",true);
         $submitButton.attr("disabled",true).val("searching..")
         var stuff=$searchField.val();
@@ -22,7 +20,7 @@ $(document).ready(function(){
                 photoHTML+='<img src= "'+ photo.media.m +'"></a></li>';          
             });
             photoHTML+='</ul';
-            $('#searchresults').html(photoHTML); 
+            $('#photos').html(photoHTML);
             $searchField.prop("disabled",false);
             $submitButton.attr("disabled",false).val("submit");
         }
@@ -34,8 +32,7 @@ $(document).ready(function(){
     $('button').click(function(){
         $("button").removeClass("selected");
         $(this).addClass("selected");
-        //remove search results
-        $("#searchresults").html("");
+        
         var animal=$(this).text(); //will hold 'cat' when cat button is clicked
         //we need to send this along to flickr
         var flickrOptions={
