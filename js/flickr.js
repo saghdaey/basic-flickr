@@ -34,6 +34,8 @@ $(document).ready(function(){
     $('button').click(function(){
         $("button").removeClass("selected");
         $(this).addClass("selected");
+        //remove search results
+        $("#searchresults").html("");
         var animal=$(this).text(); //will hold 'cat' when cat button is clicked
         //we need to send this along to flickr
         var flickrOptions={
