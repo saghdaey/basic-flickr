@@ -2,6 +2,7 @@ $(document).ready(function(){
     
  var flickerAPI = "http://api.flickr.com/services/feeds/photos_public.gne?jsoncallback=?";
     $('form').submit(function(evt){
+       $("button").removeClass("selected");
         var $submitButton=$("#submit");
         var $searchField=$('#search');
         evt.preventDefault();
@@ -12,6 +13,7 @@ $(document).ready(function(){
             tags:stuff,
             format:"json"
         };
+
         function displaySearch(data){
             var photoHTML='<ul>';
             $.each(data.items, function(i, photo){
