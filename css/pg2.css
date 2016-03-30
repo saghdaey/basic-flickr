@@ -23,7 +23,8 @@ h1, h2 {
 }
 
 .graphic,
-.graphic-with-text {
+.graphic-with-text,
+.svg-text {
   margin: 1em auto;
   width: 20%;
 }
@@ -32,6 +33,10 @@ h1, h2 {
   color: #FFF;
   background: transparent url('../img/star.svg') left top no-repeat;
   height: 200px;
+}
+
+.outer-circle{
+    fill: blue;
 }
 
 
